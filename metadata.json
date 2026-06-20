@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Trend Zone",
+  "description": "An enterprise-grade e-commerce platform for Beauty, Fashion, Watches, Home Decor, and Trending Products.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
