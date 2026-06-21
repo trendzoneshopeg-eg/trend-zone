@@ -651,19 +651,14 @@ export default function App() {
     console.log(`[Interaction Log] Super Admin Bypass Gate credentials submitted: email=${adminEmailInput}`);
     try {
       const user = await emailLogin(adminEmailInput, adminPasswordInput);
-      if (adminEmailInput === 'trendzoneshopeg@gmail.com') {
-        setCurrentRole('super_admin');
-        setIsLoggedIn(true);
-        setUserName(isAr ? 'المدير العام لشركة تريند زون' : 'Trend Zone Managing Director');
-        setUserEmail(adminEmailInput);
-        setUserPhone('+201507425002');
-        setIsAdminGateOpen(false);
-        navigateTo('/admin');
-        setActiveTab2('admin');
-        setAdminEmailInput('');
-        setAdminPasswordInput('');
-        setAdminLoginError('');
-        
+     if (user?.role === 'super_admin') {
+  setCurrentRole('super_admin');
+  setIsLoggedIn(true);
+  setUserName(isAr ? 'المدير العام لشركة تريند زون' : 'Trend Zone Admin');
+  setUserEmail(inputEmail);
+  setIsAuthModalOpen(false);
+  navigateTo('/admin');
+}
         logAction('تسجيل دخول ناجح عبر بوابة الإدارة الآمنة', 'الحسابات والتراخيص');
         
         setSystemAlerts(prev => [
