@@ -665,7 +665,14 @@ export default function App() {
         setAdminLoginError('');
         
         logAction('تسجيل دخول ناجح عبر بوابة الإدارة الآمنة', 'الحسابات والتراخيص');
-        
+       if (user?.role === 'super_admin') {
+  setCurrentRole('super_admin');
+  setIsLoggedIn(true);
+  setUserName(isAr ? 'المدير العام لشركة تريند زون' : 'Trend Zone Admin');
+  setUserEmail(inputEmail);
+  setIsAuthModalOpen(false);
+  navigateTo('/admin');
+} 
         setSystemAlerts(prev => [
           isAr ? 'بروتوكول وصول معتمد: تم تأسيس الهوية المشفرة لمسؤول المنصة.' : 'Security Handshake Verified: Admin channel operational.',
           ...prev
