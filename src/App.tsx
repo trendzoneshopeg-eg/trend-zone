@@ -686,7 +686,41 @@ export default function App() {
     e.preventDefault();
     if (!inputEmail) return;
 
-    console.log(`[Interaction Log] User initiated ${authMode} submission. Email: ${inputEmail}`);
+f (authMode === 'login') {
+
+        const user = await emailLogin(inputEmail, inputPassword);
+
+        
+
+        if (inputEmail === 'trendzoneshopeg@gmail.com') {
+
+          setCurrentRole('super_admin');
+
+          setIsLoggedIn(true);
+
+          setUserName(isAr ? 'المدير العام لشركة تريند زون' : 'Trend Zone Managing Director');
+
+          setUserEmail(inputEmail);
+
+          setUserPhone('+201507425002');
+
+          setIsAuthModalOpen(false);
+
+          setActiveTab2('admin');
+
+          navigateTo('/admin');
+
+          logAction('تسجيل الدخول كأدمن رئيسي للنظام', 'الحسابات والتراخيص');
+
+          
+
+          setSystemAlerts(prev => [
+
+            isAr ? 'تم بدء جلسة تواصل إدارية مشفرة لمدير النظام' : 'Encrypted admin session started.',
+
+            ...prev
+
+          ]);    console.log(`[Interaction Log] User initiated ${authMode} submission. Email: ${inputEmail}`);
 
     try {
       if (authMode === 'login') {
