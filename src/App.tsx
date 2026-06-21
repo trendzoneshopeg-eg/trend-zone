@@ -42,6 +42,9 @@ import ProductCompare from './components/ProductCompare';
 // Firebase lazy integration
 import { isFirebaseConfigured, emailLogin, emailRegister, signOutUser, signInWithGooglePopup } from './firebase';
 
+// Vercel Analytics
+import { Analytics } from '@vercel/analytics/react';
+
 export default function App() {
   // Global App States
   const [lang, setLang] = useState<Language>('ar');
@@ -2388,6 +2391,9 @@ f (authMode === 'login') {
           </div>
         )}
       </AnimatePresence>
+      
+      {/* Vercel Web Analytics */}
+      <Analytics />
     </div>
   );
 }
