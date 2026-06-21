@@ -621,16 +621,14 @@ export default function App() {
     
     setTimeout(() => {
       setIsGoogleLoading(false);
-      if (email === 'trendzoneshopeg@gmail.com') {
-        setCurrentRole('super_admin');
-        setIsLoggedIn(true);
-        setUserName(isAr ? 'المدير العام لشركة تريند زون' : 'Trend Zone Managing Director');
-        setUserEmail(email);
-        setUserPhone('+201507425002');
-        navigateTo('/admin');
-        setActiveTab2('admin');
-        logAction('تسجيل دخول معتمد عبر بوابة Google للمسؤول', 'الحسابات والتراخيص');
-        setSystemAlerts(prev => [
+    if (user?.role === 'super_admin') {
+  setCurrentRole('super_admin');
+  setIsLoggedIn(true);
+  setUserName(isAr ? 'المدير العام لشركة تريند زون' : 'Trend Zone Admin');
+  setUserEmail(inputEmail);
+  setIsAuthModalOpen(false);
+  navigateTo('/admin');
+}
           isAr ? 'تم التحقق من هوية Google: لوحة المدير العام جاهزة.' : 'Google identity verified: Managing Director console initialized.',
           ...prev
         ]);
@@ -639,7 +637,7 @@ export default function App() {
         setIsLoggedIn(true);
         setUserName(name);
         setUserEmail(email);
-        setUserPhone('01015074250');
+        setUserPhone
         setActiveTab2('dashboard'); // Redirect auto after login to Customer Dashboard
         logAction(`تسجيل الدخول معتمد للمستخدم ${email} عبر Google`, 'الحسابات والتراخيص');
       }
