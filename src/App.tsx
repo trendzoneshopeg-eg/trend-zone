@@ -624,8 +624,6 @@ export default function App() {
   navigateTo('/admin');
 }
           isAr ? 'تم التحقق من هوية Google: لوحة المدير العام جاهزة.' : 'Google identity verified: Managing Director console initialized.',
-          ...prev
-        ]);
       } else {
         setCurrentRole('customer');
         setIsLoggedIn(true);
