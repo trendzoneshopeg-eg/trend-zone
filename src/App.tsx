@@ -623,7 +623,6 @@ export default function App() {
   setIsAuthModalOpen(false);
   navigateTo('/admin');
 }
-          isAr ? 'تم التحقق من هوية Google: لوحة المدير العام جاهزة.' : 'Google identity verified: Managing Director console initialized.',
       } else {
         setCurrentRole('customer');
         setIsLoggedIn(true);
