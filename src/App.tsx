@@ -661,10 +661,7 @@ export default function App() {
 }
         logAction('تسجيل دخول ناجح عبر بوابة الإدارة الآمنة', 'الحسابات والتراخيص');
         
-        setSystemAlerts(prev => [
-          isAr ? 'بروتوكول وصول معتمد: تم تأسيس الهوية المشفرة لمسؤول المنصة.' : 'Security Handshake Verified: Admin channel operational.',
-          ...prev
-        ]);
+        
       } else {
         setAdminLoginError(isAr ? 'الهوية المدخلة ليست للمسؤول! محظور الدخول.' : 'Invalid system signature! Handshake failed.');
         logAction(`محاولة دخول غير مصرحة كمسؤول من: ${adminEmailInput}`, 'أنظمة الأمان والتحكم');
