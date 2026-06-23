@@ -569,13 +569,7 @@ export default function App() {
           navigateTo('/admin');
           setActiveTab2('admin');
           logAction('جلسة إدارية معتمدة عبر بوابة Google الآمنة للمسؤول', 'الحسابات والتراخيص');
-          
-          setSystemAlerts(prev => [
-            isAr 
-              ? 'تم التحقق من هوية Google: لوحة المدير العام جاهزة.' 
-              : 'Google identity verified: Managing Director console initialized.',
-            ...prev
-          ]);
+        
         } else {
           setCurrentRole('customer');
           setUserName(name);
